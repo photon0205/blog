@@ -19,6 +19,7 @@ def UsersView(request):
         user = User.objects.all()
         data = UserSerializer(user, many=True).data
         return Response(data)
+        
 
     if request.method == 'POST':
         serializer = UserSerializer(data=request.data)
