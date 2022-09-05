@@ -73,6 +73,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+]
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

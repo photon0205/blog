@@ -6,20 +6,20 @@ import Settings from "./pages/settings/Settings";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
+
 
 function App() {
-  const currentUser = true;
   return (
     <Router>
       <Topbar />
       <Routes>
           <Route path="/" element={<Homepage />} />
-          <Route path="/posts" element={<Homepage />} />
-          <Route path="/register" element={currentUser ? <Homepage /> : <Register />} />
-          <Route path="/write" element={currentUser ? <Homepage /> : <Login />} />
-          <Route path="/post/:id" element={<Single />} />
-          <Route path="/login" element={currentUser ? <Homepage /> : <Login />}/>
-          <Route path="/settings" element={currentUser ? <Settings /> : <Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/write" element={<Write/>} />
+          <Route path="/post" element={<Single />} />
+          <Route path="/login" element={<Login />}/>
+          <Route path="/settings" element={<Settings />} />
       </Routes>
     </Router>
   );
